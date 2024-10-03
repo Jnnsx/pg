@@ -1,4 +1,7 @@
-def hello():
-    print("Hello world!")
+def dopln_cislo(cislo):
+    pass
+    If čis
 
-hello()
+čis = input("zadej číslo:")
+dopln_cislo(čis)
+    
