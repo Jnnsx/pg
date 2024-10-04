@@ -4,6 +4,6 @@ cis = int(input("zadej číslo:"))
 dopln_cislo(cis)
 
 if cis % 2 == 0:
-    print("číslo je sudé")
+    print('číslo', cis ,'je sudé')
 else:
-    print("číslo je liché")
+    print('číslo', cis, 'je liché')
