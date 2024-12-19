@@ -16,10 +16,10 @@ def download_url_and_get_all_hrefs(url):
         print(f"Nastala chyba, http code: {response.status_code}")
 
     html_text = response.text
-    for i in range(1, 6):
-        pattern = re.compile(f'<h{i}[^>]*>(.*?)</h{i}>', re.IGNORECASE)
-        matches = pattern.findall(html_text)
-        hrefs.extend(matches)
+    pattern = re.compile(r'<a\s+[^>]*href=["\'](.*?)["\']', re.IGNORECASE)
+    matches = pattern.findall(html_text)
+    hrefs.extend(matches)
+
 
 
     return hrefs
@@ -35,3 +35,4 @@ if __name__ == "__main__":
         print(f"Program skoncil chybou: {e}")
     except requests.exceptions.ConnectionError:
         print(f"Nastala chyba, nepodařilo se připojit na {url}")
+    
